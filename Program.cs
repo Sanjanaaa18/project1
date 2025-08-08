@@ -5,6 +5,7 @@ using System;
 Console.WriteLine("Hello, World!");
 Console.WriteLine("Welcome");
 
+
 //variable declaration
 int num = 10;
 string greeting = "Hello, C#";
@@ -18,8 +19,60 @@ Console.WriteLine("Number:{0} and Greeting:{1}", num, greeting);//previous type 
 
 //Console.WriteLine(variabledeclarationdemo1());
 
-sampleproblem sampleproblem =new sampleproblem();
-sampleproblem.sample();
+//sampleproblem sampleproblem = new sampleproblem();
+//sampleproblem.sample();
+//Product product = new Product();
+
+/*product.ProductName = "Laptop";
+product.ProductPrice = 1500.00;
+product.ProductQuantity = 2;
+product.DisplayProductDetails();
+Console.WriteLine($"Total Price: {product.CalculateTotalPrice()}");
+Console.WriteLine($"Discounted Price (10% off): {product.CalculateDiscountedPrice(10)}");
+Console.WriteLine($"Restock the product:{product.restock}");
+Console.WriteLine($"Press any key to exit...");
+*/
+employeemulti employee = new employeemulti();
+Console.WriteLine("Enter Employee ID:");
+employee.employeemultiID = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter Employee Name:");
+employee.Name = Console.ReadLine();
+Console.WriteLine("Enter Employee City:");
+employee.City = Console.ReadLine();
+Console.WriteLine("Enter Employee Age:");
+employee.Age = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter Employee Role:");
+employee.role = Console.ReadLine();
+Console.WriteLine("Enter Employee Email:");
+employee.email = Console.ReadLine();
+Console.WriteLine("Enter Employee Salary:");
+employee.salary = Convert.ToDouble(Console.ReadLine());
+employee.DisplayDetails();
+Console.WriteLine($"Employee Details: Id: {employee.Id}, Name: {employee.Name}, City: {employee.City}, Age: {employee.Age}, Employee ID: {employee.employeemultiID}, Role: {employee.role}, Email: {employee.email}, Salary: {employee.salary}");
+Console.WriteLine("Person Details:{}");
+
+
+
+
+//multilevel inheritance
+multilevel multilevel = new multilevel();
+multilevel.bone(); // This will call the method from the base class and display
+
+Person person = new Person(1, "John Doe", "New York", 30);
+person.DisplayDetails();
+Console.WriteLine($"Person Details:{person.GetDetails()}");
+person.UpdateDetails(2, "Jane Smith", "Los Angeles", 25);
+person.DisplayDetails();
+Console.WriteLine($"Updated Person Details: {person.GetDetails()}");
+
+Person person1 = new Person();
+person1.Id = 3;
+person1.Name = "Alice Johnson";
+person1.City = "Chicago";
+person1.Age = 28;
+Console.WriteLine($"Person1 Details: Id: {person1.Id}, Name: {person1.Name}, City: {person1.City}, Age: {person1.Age}");
+Console.WriteLine(person.ToString());
+
 static string variabledeclarationdemo1()
 {
     calc calc = new calc();
@@ -119,4 +172,45 @@ static void doWhileLoop()
         Console.WriteLine($"Number: {n}");
         n--;
     } while (n > 10);
+}
+
+
+
+//arrays
+twodimensional();
+
+static void twodimensional()
+{
+    int[,] twodimensionalarray = new int[3, 3]
+    {
+     { 1,2,3},
+    {4,5,6},
+    { 7,8,9}
+    };
+    for (int i = 0; i < twodimensionalarray.GetLength(0); i++)
+    {
+        for (int j = 0; j < twodimensionalarray.GetLength(1); j++)
+        {
+            Console.Write(twodimensionalarray[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+
+
+//value type data ranges
+dataranges();
+
+static void dataranges()
+{
+    Console.WriteLine(int.MinValue + " " + int.MaxValue);
+    Console.WriteLine(short.MinValue + " " + short.MaxValue);
+    Console.WriteLine(long.MinValue + " " + long.MaxValue);
+    Console.WriteLine(byte.MinValue + " " + byte.MaxValue);
+    Console.WriteLine(float.MinValue + " " + float.MaxValue);
+    Console.WriteLine(double.MinValue + " " + double.MaxValue);
+    Console.WriteLine(decimal.MinValue + " " + decimal.MaxValue);
+    Console.WriteLine(char.MinValue + " " + char.MaxValue);
+    Console.WriteLine(bool.FalseString + " " + bool.TrueString);
 }
